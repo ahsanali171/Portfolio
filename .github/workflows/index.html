@@ -2,1004 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Ahsan Ali Full-Stack Ecommerce Developer</title>
+  <title>Ahsan Ali – Full-Stack Ecommerce Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
-  --secondary: #0ea5e9;
-  --accent: #8b5cf6;
-  --bg-dark: #0f172a;
-  --bg-darker: #020617;
-  --bg-card: #1e293b;
-  --text-primary: #f1f5f9;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
-  --border: #334155;
-  --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: var(--bg-dark);
-  color: var(--text-primary);
-  line-height: 1.6;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  padding-top: 80px;
-}
-
-/* Navigation Bar */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.85) 100%);
-  backdrop-filter: blur(30px) saturate(180%);
-  -webkit-backdrop-filter: blur(30px) saturate(180%);
-  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.navbar::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.5), transparent);
-}
-
-.navbar.scrolled {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.95) 100%);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  border-bottom-color: rgba(99, 102, 241, 0.3);
-}
-
-.nav-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
-}
-
-.nav-logo {
-  position: relative;
-  z-index: 1;
-}
-
-.nav-logo a {
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  text-decoration: none;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  display: inline-block;
-  position: relative;
-  letter-spacing: -0.5px;
-}
-
-.nav-logo a::before {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
-  transition: width 0.4s ease;
-}
-
-.nav-logo a:hover {
-  transform: scale(1.05);
-  filter: brightness(1.2);
-}
-
-.nav-logo a:hover::before {
-  width: 100%;
-}
-
-.nav-menu {
-  display: flex;
-  list-style: none;
-  gap: 8px;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  background: rgba(99, 102, 241, 0.05);
-  padding: 8px;
-  border-radius: 50px;
-  border: 1px solid rgba(99, 102, 241, 0.1);
-}
-
-.nav-link {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  padding: 10px 20px;
-  border-radius: 50px;
-  display: inline-block;
-  overflow: hidden;
-}
-
-.nav-link::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: 50px;
-  z-index: -1;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
-  border-radius: 2px;
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover {
-  color: var(--text-primary);
-  transform: translateY(-2px);
-}
-
-.nav-link:hover::before {
-  opacity: 1;
-}
-
-.nav-link:hover::after {
-  width: 60%;
-}
-
-.nav-link.active {
-  color: var(--text-primary);
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
-}
-
-.nav-link.active::before {
-  opacity: 1;
-}
-
-.nav-link.active::after {
-  width: 60%;
-  background: linear-gradient(90deg, #667eea, #764ba2);
-}
-
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  background: rgba(99, 102, 241, 0.1);
-  border: 1px solid rgba(99, 102, 241, 0.2);
-  border-radius: 8px;
-  cursor: pointer;
-  padding: 10px;
-  gap: 5px;
-  transition: all 0.3s ease;
-  z-index: 1001;
-}
-
-.nav-toggle:hover {
-  background: rgba(99, 102, 241, 0.2);
-  border-color: rgba(99, 102, 241, 0.4);
-}
-
-.nav-toggle span {
-  width: 25px;
-  height: 2.5px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
-  border-radius: 3px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-toggle.active {
-  background: rgba(99, 102, 241, 0.2);
-}
-
-.nav-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(8px, 8px);
-  background: #667eea;
-}
-
-.nav-toggle.active span:nth-child(2) {
-  opacity: 0;
-  transform: translateX(-10px);
-}
-
-.nav-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
-  background: #764ba2;
-}
-
-/* Hero Section */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 80px 20px;
-  background: var(--gradient-hero);
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%);
-  animation: pulse 8s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  animation: fadeInUp 1s ease-out;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-badge {
-  display: inline-block;
-  padding: 8px 20px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  margin-bottom: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  animation: fadeIn 1.2s ease-out;
-}
-
-.hero-title {
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  font-weight: 800;
-  margin-bottom: 20px;
-  line-height: 1.1;
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: inline-block;
-}
-
-.subtitle {
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: rgba(255, 255, 255, 0.95);
-}
-
-.desc {
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  max-width: 600px;
-  margin: 0 auto 40px;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.7;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 14px 32px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-  cursor: pointer;
-}
-
-.btn-primary {
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--primary);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-  background: #ffffff;
-}
-
-.btn-secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
-}
-
-.btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.8);
-  transform: translateY(-3px);
-}
-
-/* Hero Shapes Animation */
-.hero-shapes {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.shape {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  animation: float 20s infinite ease-in-out;
-}
-
-.shape-1 {
-  width: 300px;
-  height: 300px;
-  top: 10%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.shape-2 {
-  width: 200px;
-  height: 200px;
-  top: 60%;
-  right: 10%;
-  animation-delay: 5s;
-}
-
-.shape-3 {
-  width: 150px;
-  height: 150px;
-  bottom: 20%;
-  left: 50%;
-  animation-delay: 10s;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  33% {
-    transform: translate(30px, -30px) rotate(120deg);
-  }
-  66% {
-    transform: translate(-20px, 20px) rotate(240deg);
-  }
-}
-
-/* Section Styles */
-.section {
-  padding: 100px 10%;
-  position: relative;
-}
-
-.section.alt {
-  background: var(--bg-darker);
-}
-
-.section-header {
-  margin-bottom: 50px;
-  max-width: 800px;
-}
-
-.section-header h2 {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  font-weight: 700;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  color: var(--text-primary);
-}
-
-.section-number {
-  font-size: 1.2rem;
-  color: var(--primary);
-  font-weight: 600;
-  opacity: 0.7;
-}
-
-.section-description {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-/* Grid & Cards */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
-}
-
-.card {
-  background: var(--bg-card);
-  padding: 30px;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  border-color: var(--primary);
-  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-.card-icon {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  display: block;
-}
-
-.card h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: var(--text-primary);
-  position: relative;
-  z-index: 1;
-}
-
-.card p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  position: relative;
-  z-index: 1;
-}
-
-/* Tags */
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 30px;
-}
-
-.tag {
-  background: var(--bg-card);
-  padding: 12px 20px;
-  border-radius: 50px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--text-primary);
-  border: 1px solid var(--border);
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.tag:hover {
-  background: var(--primary);
-  border-color: var(--primary);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
-}
-
-/* Projects */
-.projects {
-  display: grid;
-  gap: 20px;
-  margin-top: 40px;
-}
-
-.project-card {
-  background: var(--bg-card);
-  padding: 25px 30px;
-  border-radius: 16px;
-  text-decoration: none;
-  color: var(--text-primary);
-  border: 1px solid var(--border);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  position: relative;
-  overflow: hidden;
-}
-
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
-  transition: left 0.5s ease;
-}
-
-.project-card:hover::before {
-  left: 100%;
-}
-
-.project-card:hover {
-  transform: translateX(10px);
-  border-color: var(--primary);
-  box-shadow: 0 15px 35px rgba(99, 102, 241, 0.2);
-  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(99, 102, 241, 0.05) 100%);
-}
-
-.project-card.featured {
-  border: 2px solid var(--primary);
-  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(99, 102, 241, 0.1) 100%);
-}
-
-.project-icon {
-  font-size: 2rem;
-  flex-shrink: 0;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(99, 102, 241, 0.1);
-  border-radius: 12px;
-  transition: all 0.3s ease;
-}
-
-.project-card:hover .project-icon {
-  background: var(--primary);
-  transform: scale(1.1) rotate(5deg);
-}
-
-.project-content {
-  flex: 1;
-}
-
-.project-content h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 5px;
-  color: var(--text-primary);
-}
-
-.project-content p {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-}
-
-.project-arrow {
-  font-size: 1.5rem;
-  color: var(--primary);
-  transition: all 0.3s ease;
-  flex-shrink: 0;
-}
-
-.project-card:hover .project-arrow {
-  transform: translateX(5px);
-  color: var(--secondary);
-}
-
-/* Companies Section */
-.companies {
-  display: grid;
-  gap: 30px;
-  margin-top: 40px;
-  max-width: 900px;
-}
-
-.company-card {
-  background: var(--bg-card);
-  padding: 35px;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.company-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--primary);
-  transform: scaleY(0);
-  transition: transform 0.4s ease;
-}
-
-.company-card:hover {
-  transform: translateX(10px);
-  border-color: var(--primary);
-  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
-}
-
-.company-card:hover::before {
-  transform: scaleY(1);
-}
-
-.company-header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.company-icon {
-  font-size: 2.5rem;
-  width: 70px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(99, 102, 241, 0.1);
-  border-radius: 16px;
-  flex-shrink: 0;
-  transition: all 0.3s ease;
-}
-
-.company-card:hover .company-icon {
-  background: var(--primary);
-  transform: scale(1.1) rotate(5deg);
-}
-
-.company-info {
-  flex: 1;
-}
-
-.company-info h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 5px;
-  color: var(--text-primary);
-}
-
-.company-role {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  font-weight: 500;
-}
-
-.company-period {
-  margin-bottom: 15px;
-}
-
-.period-badge {
-  display: inline-block;
-  padding: 8px 18px;
-  background: rgba(99, 102, 241, 0.2);
-  border: 1px solid var(--primary);
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--primary);
-  transition: all 0.3s ease;
-}
-
-.company-card:hover .period-badge {
-  background: var(--primary);
-  color: white;
-}
-
-.company-description {
-  color: var(--text-secondary);
-  line-height: 1.7;
-  font-size: 1rem;
-}
-
-/* Contact Section */
-.contact-content {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 40px 0;
-}
-
-.contact-text {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-  margin-bottom: 40px;
-  line-height: 1.8;
-}
-
-.contact-buttons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* Footer */
-footer {
-  background: var(--bg-darker);
-  padding: 50px 20px;
-  text-align: center;
-  border-top: 1px solid var(--border);
-}
-
-.footer-content p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  margin-bottom: 10px;
-}
-
-.footer-content strong {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-.footer-subtitle {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-top: 10px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  body {
-    padding-top: 70px;
-  }
-
-  .nav-container {
-    height: 70px;
-    padding: 0 20px;
-  }
-
-  .nav-toggle {
-    display: flex;
-  }
-
-  .nav-menu {
-    position: fixed;
-    top: 70px;
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - 70px);
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.95) 100%);
-    backdrop-filter: blur(30px) saturate(180%);
-    -webkit-backdrop-filter: blur(30px) saturate(180%);
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 60px;
-    gap: 15px;
-    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border-top: 1px solid rgba(99, 102, 241, 0.2);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    background: rgba(99, 102, 241, 0.05);
-    border-radius: 0;
-  }
-
-  .nav-menu.active {
-    left: 0;
-  }
-
-  .nav-link {
-    font-size: 1.1rem;
-    padding: 15px 30px;
-    width: 80%;
-    text-align: center;
-    border-radius: 50px;
-  }
-
-  .nav-link:hover {
-    transform: translateX(5px);
-  }
-
-  .section {
-    padding: 60px 5%;
-  }
-
-  .hero {
-    min-height: 90vh;
-    padding: 60px 20px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .project-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 25px;
-  }
-
-  .project-arrow {
-    display: none;
-  }
-
-  .section-header h2 {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .contact-buttons {
-    flex-direction: column;
-  }
-
-  .contact-buttons .btn {
-    width: 100%;
-  }
-
-  .company-card {
-    padding: 25px;
-  }
-
-  .company-header {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
-  }
-
-  .company-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .subtitle {
-    font-size: 1.2rem;
-  }
-
-  .desc {
-    font-size: 1rem;
-  }
-
-  .card {
-    padding: 20px;
-  }
-
-  .project-card {
-    padding: 20px;
-  }
-}
-
-/* Smooth Scroll */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Selection */
-::selection {
-  background: var(--primary);
-  color: white;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg-darker);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-dark);
-}
-
-/* Section Scroll Offset */
-section {
-  scroll-margin-top: 80px;
-}
-
-@media (max-width: 768px) {
-  section {
-    scroll-margin-top: 70px;
-  }
-}
-
-  </style>
 </head>
 <body>
 
@@ -1029,7 +37,7 @@ section {
   <!-- Hero -->
   <header class="hero" id="home">
     <div class="hero-content">
-      <div class="hero-badge">ðŸ‘‹ Welcome</div>
+      <div class="hero-badge">👋 Welcome</div>
       <h1 class="hero-title">
         <span class="gradient-text">Ahsan Ali</span>
       </h1>
@@ -1057,32 +65,32 @@ section {
     </div>
     <div class="grid">
       <div class="card">
-        <div class="card-icon">âš™ï¸</div>
+        <div class="card-icon">⚙️</div>
         <h3>WordPress Development</h3>
         <p>Theme & Plugin Development</p>
       </div>
       <div class="card">
-        <div class="card-icon">ðŸ›ï¸</div>
+        <div class="card-icon">🛍️</div>
         <h3>Shopify Customization</h3>
         <p>Theme Customization (Liquid)</p>
       </div>
       <div class="card">
-        <div class="card-icon">âš›ï¸</div>
+        <div class="card-icon">⚛️</div>
         <h3>Shopify Apps</h3>
         <p>React Remix Development</p>
       </div>
       <div class="card">
-        <div class="card-icon">ðŸŽ¨</div>
+        <div class="card-icon">🎨</div>
         <h3>Wix Development</h3>
         <p>Velo & Partner App Development</p>
       </div>
       <div class="card">
-        <div class="card-icon">ðŸ”§</div>
+        <div class="card-icon">🔧</div>
         <h3>Laravel Backend</h3>
         <p>Backend Development</p>
       </div>
       <div class="card">
-        <div class="card-icon">ðŸ”Œ</div>
+        <div class="card-icon">🔌</div>
         <h3>API Integrations</h3>
         <p>REST API Integrations</p>
       </div>
@@ -1096,16 +104,16 @@ section {
       <p class="section-description">Seamless integrations with leading platforms</p>
     </div>
     <div class="tags">
-      <span class="tag">ðŸ’³ Stripe</span>
-      <span class="tag">ðŸ’µ PayPal</span>
-      <span class="tag">ðŸ“Š Zoho CRM</span>
-      <span class="tag">ðŸ“¦ Zoho Inventory</span>
-      <span class="tag">ðŸ“š Zoho Books</span>
-      <span class="tag">ðŸ“ˆ Xero</span>
-      <span class="tag">ðŸ“‹ Orderhive</span>
-      <span class="tag">ðŸ’¸ Paynetworx</span>
-      <span class="tag">ðŸ’³ JetPay</span>
-      <span class="tag">âž• Many More</span>
+      <span class="tag">💳 Stripe</span>
+      <span class="tag">💵 PayPal</span>
+      <span class="tag">📊 Zoho CRM</span>
+      <span class="tag">📦 Zoho Inventory</span>
+      <span class="tag">📚 Zoho Books</span>
+      <span class="tag">📈 Xero</span>
+      <span class="tag">📋 Orderhive</span>
+      <span class="tag">💸 Paynetworx</span>
+      <span class="tag">💳 JetPay</span>
+      <span class="tag">➕ Many More</span>
     </div>
   </section>
 
@@ -1117,32 +125,32 @@ section {
     </div>
     <div class="grid">
       <div class="card">
-        <div class="card-icon">ðŸš€</div>
+        <div class="card-icon">🚀</div>
         <h3>Laravel Framework</h3>
         <p>Expert in Laravel MVC architecture</p>
       </div>
       <div class="card">
-        <div class="card-icon">ðŸ—„ï¸</div>
+        <div class="card-icon">🗄️</div>
         <h3>Database Management</h3>
         <p>Eloquent ORM & Database Migrations</p>
       </div>
       <div class="card">
-        <div class="card-icon">ðŸ”</div>
+        <div class="card-icon">🔐</div>
         <h3>Authentication & Security</h3>
         <p>Laravel Sanctum & Security Best Practices</p>
       </div>
       <div class="card">
-        <div class="card-icon">ðŸ”„</div>
+        <div class="card-icon">🔄</div>
         <h3>API Development</h3>
         <p>RESTful APIs & API Resources</p>
       </div>
       <div class="card">
-        <div class="card-icon">âš¡</div>
+        <div class="card-icon">⚡</div>
         <h3>Performance Optimization</h3>
         <p>Caching, Queue Jobs & Optimization</p>
       </div>
       <div class="card">
-        <div class="card-icon">ðŸ§ª</div>
+        <div class="card-icon">🧪</div>
         <h3>Testing & Quality</h3>
         <p>Unit Testing & Code Quality Assurance</p>
       </div>
@@ -1157,44 +165,44 @@ section {
     </div>
     <div class="projects">
       <a href="https://phytoceutics.com/" target="_blank" class="project-card">
-        <div class="project-icon">ðŸ›’</div>
+        <div class="project-icon">🛒</div>
         <div class="project-content">
           <h3>Phytoceutics</h3>
           <p>E-commerce platform</p>
         </div>
-        <div class="project-arrow">â†’</div>
+        <div class="project-arrow">→</div>
       </a>
       <a href="https://www.wineofthemonth.co.za/" target="_blank" class="project-card">
-        <div class="project-icon">ðŸ·</div>
+        <div class="project-icon">🍷</div>
         <div class="project-content">
           <h3>Wine of the Month</h3>
           <p>Subscription-based wine store</p>
         </div>
-        <div class="project-arrow">â†’</div>
+        <div class="project-arrow">→</div>
       </a>
       <a href="https://erthhaus.co.za/" target="_blank" class="project-card">
-        <div class="project-icon">ðŸŒ¿</div>
+        <div class="project-icon">🌿</div>
         <div class="project-content">
           <h3>Erthhaus</h3>
           <p>E-commerce solution</p>
         </div>
-        <div class="project-arrow">â†’</div>
+        <div class="project-arrow">→</div>
       </a>
       <a href="https://gvrprep.co.za/" target="_blank" class="project-card">
-        <div class="project-icon">ðŸ’ª</div>
+        <div class="project-icon">💪</div>
         <div class="project-content">
           <h3>GVR Prep</h3>
           <p>Fitness e-commerce</p>
         </div>
-        <div class="project-arrow">â†’</div>
+        <div class="project-arrow">→</div>
       </a>
       <a href="https://www.thelakeandcompany.com/" target="_blank" class="project-card">
-        <div class="project-icon">ðŸžï¸</div>
+        <div class="project-icon">🏞️</div>
         <div class="project-content">
           <h3>The Lake & Company</h3>
           <p>Lifestyle brand store</p>
         </div>
-        <div class="project-arrow">â†’</div>
+        <div class="project-arrow">→</div>
       </a>
     </div>
   </section>
@@ -1207,12 +215,12 @@ section {
     </div>
     <div class="projects">
       <a href="https://apps.shopify.com/subscriptionflow-app-1" target="_blank" class="project-card featured">
-        <div class="project-icon">â­</div>
+        <div class="project-icon">⭐</div>
         <div class="project-content">
           <h3>SubscriptionFlow</h3>
-          <p>Shopify App Store â€“ Subscription management solution</p>
+          <p>Shopify App Store – Subscription management solution</p>
         </div>
-        <div class="project-arrow">â†’</div>
+        <div class="project-arrow">→</div>
       </a>
     </div>
   </section>
@@ -1225,28 +233,28 @@ section {
     </div>
     <div class="projects">
       <a href="https://www.subscriptionflow.com/" target="_blank" class="project-card">
-        <div class="project-icon">ðŸ”„</div>
+        <div class="project-icon">🔄</div>
         <div class="project-content">
           <h3>SubscriptionFlow</h3>
           <p>Main website platform</p>
         </div>
-        <div class="project-arrow">â†’</div>
+        <div class="project-arrow">→</div>
       </a>
       <a href="https://crittendenreport.com/" target="_blank" class="project-card">
-        <div class="project-icon">ðŸ“°</div>
+        <div class="project-icon">📰</div>
         <div class="project-content">
           <h3>Crittenden Report</h3>
           <p>News & media platform</p>
         </div>
-        <div class="project-arrow">â†’</div>
+        <div class="project-arrow">→</div>
       </a>
       <a href="https://www.thinkculinary.com/" target="_blank" class="project-card">
-        <div class="project-icon">ðŸ½ï¸</div>
+        <div class="project-icon">🍽️</div>
         <div class="project-content">
           <h3>Think Culinary</h3>
           <p>Culinary industry website</p>
         </div>
-        <div class="project-arrow">â†’</div>
+        <div class="project-arrow">→</div>
       </a>
     </div>
   </section>
@@ -1259,20 +267,20 @@ section {
     </div>
     <div class="projects">
       <a href="https://wordpress.org/plugins/subscriptionflow-integration-for-woocommerce/" target="_blank" class="project-card featured">
-        <div class="project-icon">ðŸ”Œ</div>
+        <div class="project-icon">🔌</div>
         <div class="project-content">
           <h3>SubscriptionFlow for WooCommerce</h3>
-          <p>WordPress.org plugin â€“ WooCommerce integration</p>
+          <p>WordPress.org plugin – WooCommerce integration</p>
         </div>
-        <div class="project-arrow">â†’</div>
+        <div class="project-arrow">→</div>
       </a>
       <a href="https://wordpress.org/plugins/subscriptionflow-add-on-for-paywall/" target="_blank" class="project-card featured">
-        <div class="project-icon">ðŸ”Œ</div>
+        <div class="project-icon">🔌</div>
         <div class="project-content">
           <h3>SubscriptionFlow Paywall Add-on</h3>
-          <p>WordPress.org plugin â€“ Paywall integration</p>
+          <p>WordPress.org plugin – Paywall integration</p>
         </div>
-        <div class="project-arrow">â†’</div>
+        <div class="project-arrow">→</div>
       </a>
     </div>
   </section>
@@ -1285,28 +293,28 @@ section {
     </div>
     <div class="projects">
       <a href="https://www.asherhousewellness.com/" target="_blank" class="project-card">
-        <div class="project-icon">ðŸ </div>
+        <div class="project-icon">🏠</div>
         <div class="project-content">
           <h3>Asher House Wellness</h3>
           <p>Wellness & lifestyle platform</p>
         </div>
-        <div class="project-arrow">â†’</div>
+        <div class="project-arrow">→</div>
       </a>
       <a href="https://www.commercialclubhouse.com/" target="_blank" class="project-card">
-        <div class="project-icon">ðŸ¢</div>
+        <div class="project-icon">🏢</div>
         <div class="project-content">
           <h3>Commercial Clubhouse</h3>
           <p>Business community platform</p>
         </div>
-        <div class="project-arrow">â†’</div>
+        <div class="project-arrow">→</div>
       </a>
       <a href="https://www.comicsoncoffee.com/" target="_blank" class="project-card">
-        <div class="project-icon">â˜•</div>
+        <div class="project-icon">☕</div>
         <div class="project-content">
           <h3>Comics on Coffee</h3>
           <p>Entertainment & e-commerce</p>
         </div>
-        <div class="project-arrow">â†’</div>
+        <div class="project-arrow">→</div>
       </a>
     </div>
   </section>
@@ -1319,12 +327,12 @@ section {
     </div>
     <div class="projects">
       <a href="https://www.wix.com/app-market/subscriptionflow-app" target="_blank" class="project-card featured">
-        <div class="project-icon">â­</div>
+        <div class="project-icon">⭐</div>
         <div class="project-content">
           <h3>SubscriptionFlow</h3>
-          <p>Wix App Market â€“ Subscription management solution</p>
+          <p>Wix App Market – Subscription management solution</p>
         </div>
-        <div class="project-arrow">â†’</div>
+        <div class="project-arrow">→</div>
       </a>
     </div>
   </section>
@@ -1338,7 +346,7 @@ section {
     <div class="companies">
       <div class="company-card">
         <div class="company-header">
-          <div class="company-icon">ðŸ¢</div>
+          <div class="company-icon">🏢</div>
           <div class="company-info">
             <h3>Techloyce</h3>
             <p class="company-role">Full-Stack Developer</p>
@@ -1351,7 +359,7 @@ section {
       </div>
       <div class="company-card">
         <div class="company-header">
-          <div class="company-icon">ðŸ’¼</div>
+          <div class="company-icon">💼</div>
           <div class="company-info">
             <h3>AMS (All Marketing Solutions)</h3>
             <p class="company-role">Web Developer</p>
@@ -1374,8 +382,8 @@ section {
     <div class="contact-content">
       <p class="contact-text">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
       <div class="contact-buttons">
-        <a href="mailto:ahsanali171m@gmail.com" class="btn btn-primary">Send Email</a>
-        <!-- <a href="https://github.com/ahsanali171" target="_blank" class="btn btn-secondary">View GitHub</a> -->
+        <a href="mailto:your.email@example.com" class="btn btn-primary">Send Email</a>
+        <a href="https://github.com/yourusername" target="_blank" class="btn btn-secondary">View GitHub</a>
       </div>
     </div>
   </section>
@@ -1383,7 +391,7 @@ section {
   <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <p>Â© 2026 <strong>Ahsan Ali</strong> Ecommerce & Subscription Solutions</p>
+      <p>© 2026 <strong>Ahsan Ali</strong> — Ecommerce & Subscription Solutions</p>
       <p class="footer-subtitle">Built with passion for creating exceptional digital experiences</p>
     </div>
   </footer>
