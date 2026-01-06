@@ -2,73 +2,474 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ahsan Ali | Developer</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #0f172a;
-      color: #e5e7eb;
-    }
-    header {
-      padding: 60px 20px;
-      text-align: center;
-      background: #020617;
-    }
-    h1 { font-size: 40px; margin-bottom: 10px; }
-    p { font-size: 18px; color: #94a3b8; }
-    section { padding: 40px 20px; max-width: 900px; margin: auto; }
-    .card {
-      background: #020617;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-    a { color: #38bdf8; text-decoration: none; }
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #64748b;
-    }
-  </style>
+  <title>Ahsan Ali â€“ Full-Stack Ecommerce Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-  <h1>Ahsan Ali here</h1>
-  <p>Full-Stack Developer | Shopify • Wix • Laravel • React</p>
-</header>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="#home">Ahsan Ali</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#integrations" class="nav-link">Integrations</a></li>
+        <li><a href="#laravel" class="nav-link">Laravel</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<section>
-  <h2>🚀 Projects</h2>
+  <!-- Hero -->
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">ðŸ‘‹ Welcome</div>
+      <h1 class="hero-title">
+        <span class="gradient-text">Ahsan Ali</span>
+      </h1>
+      <p class="subtitle">Full-Stack Ecommerce Developer</p>
+      <p class="desc">
+        Specialized in Shopify, WordPress, Wix & Subscription-Based Platforms  
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+  </header>
 
-  <div class="card">
-    <h3>SubscriptionFlow Integrations</h3>
-    <p>Custom subscription solutions for Shopify, Wix & WooCommerce.</p>
-    <a href="https://github.com/ahsanali171" target="_blank">View Code</a>
-  </div>
+  <!-- Skills -->
+  <section class="section" id="skills">
+    <div class="section-header">
+      <h2><span class="section-number">01</span>Core Expertise</h2>
+      <p class="section-description">Technologies and platforms I specialize in</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">âš™ï¸</div>
+        <h3>WordPress Development</h3>
+        <p>Theme & Plugin Development</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">ðŸ›ï¸</div>
+        <h3>Shopify Customization</h3>
+        <p>Theme Customization (Liquid)</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">âš›ï¸</div>
+        <h3>Shopify Apps</h3>
+        <p>React Remix Development</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">ðŸŽ¨</div>
+        <h3>Wix Development</h3>
+        <p>Velo & Partner App Development</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">ðŸ”§</div>
+        <h3>Laravel Backend</h3>
+        <p>Backend Development</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">ðŸ”Œ</div>
+        <h3>API Integrations</h3>
+        <p>REST API Integrations</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="card">
-    <h3>Shopify Subscription App</h3>
-    <p>Built with React Remix, Prisma & GraphQL.</p>
-  </div>
-</section>
+  <!-- Integrations -->
+  <section class="section alt" id="integrations">
+    <div class="section-header">
+      <h2><span class="section-number">02</span>Payment & API Integrations</h2>
+      <p class="section-description">Seamless integrations with leading platforms</p>
+    </div>
+    <div class="tags">
+      <span class="tag">ðŸ’³ Stripe</span>
+      <span class="tag">ðŸ’µ PayPal</span>
+      <span class="tag">ðŸ“Š Zoho CRM</span>
+      <span class="tag">ðŸ“¦ Zoho Inventory</span>
+      <span class="tag">ðŸ“š Zoho Books</span>
+      <span class="tag">ðŸ“ˆ Xero</span>
+      <span class="tag">ðŸ“‹ Orderhive</span>
+      <span class="tag">ðŸ’¸ Paynetworx</span>
+      <span class="tag">ðŸ’³ JetPay</span>
+      <span class="tag">âž• Many More</span>
+    </div>
+  </section>
 
-<section>
-  <h2>🧠 Skills</h2>
-  <p>JavaScript, PHP, Laravel, React, Remix, Shopify APIs, Wix Velo, MySQL</p>
-</section>
+  <!-- Laravel Experience -->
+  <section class="section" id="laravel">
+    <div class="section-header">
+      <h2><span class="section-number">03</span>Laravel Experience</h2>
+      <p class="section-description">Robust backend development with Laravel framework</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">ðŸš€</div>
+        <h3>Laravel Framework</h3>
+        <p>Expert in Laravel MVC architecture</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">ðŸ—„ï¸</div>
+        <h3>Database Management</h3>
+        <p>Eloquent ORM & Database Migrations</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">ðŸ”</div>
+        <h3>Authentication & Security</h3>
+        <p>Laravel Sanctum & Security Best Practices</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">ðŸ”„</div>
+        <h3>API Development</h3>
+        <p>RESTful APIs & API Resources</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">âš¡</div>
+        <h3>Performance Optimization</h3>
+        <p>Caching, Queue Jobs & Optimization</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">ðŸ§ª</div>
+        <h3>Testing & Quality</h3>
+        <p>Unit Testing & Code Quality Assurance</p>
+      </div>
+    </div>
+  </section>
 
-<section>
-  <h2>📬 Contact</h2>
-  <p>Email: <a href="mailto:ahsan171.techloyce@gmail.com">ahsan171.techloyce@gmail.com</a></p>
-  <p>GitHub: <a href="https://github.com/ahsanali171">github.com/ahsanali171</a></p>
-</section>
+  <!-- Shopify Projects -->
+  <section class="section alt" id="projects">
+    <div class="section-header">
+      <h2><span class="section-number">04</span>Shopify Projects</h2>
+      <p class="section-description">E-commerce stores built with Shopify</p>
+    </div>
+    <div class="projects">
+      <a href="https://phytoceutics.com/" target="_blank" class="project-card">
+        <div class="project-icon">ðŸ›’</div>
+        <div class="project-content">
+          <h3>Phytoceutics</h3>
+          <p>E-commerce platform</p>
+        </div>
+        <div class="project-arrow">â†’</div>
+      </a>
+      <a href="https://www.wineofthemonth.co.za/" target="_blank" class="project-card">
+        <div class="project-icon">ðŸ·</div>
+        <div class="project-content">
+          <h3>Wine of the Month</h3>
+          <p>Subscription-based wine store</p>
+        </div>
+        <div class="project-arrow">â†’</div>
+      </a>
+      <a href="https://erthhaus.co.za/" target="_blank" class="project-card">
+        <div class="project-icon">ðŸŒ¿</div>
+        <div class="project-content">
+          <h3>Erthhaus</h3>
+          <p>E-commerce solution</p>
+        </div>
+        <div class="project-arrow">â†’</div>
+      </a>
+      <a href="https://gvrprep.co.za/" target="_blank" class="project-card">
+        <div class="project-icon">ðŸ’ª</div>
+        <div class="project-content">
+          <h3>GVR Prep</h3>
+          <p>Fitness e-commerce</p>
+        </div>
+        <div class="project-arrow">â†’</div>
+      </a>
+      <a href="https://www.thelakeandcompany.com/" target="_blank" class="project-card">
+        <div class="project-icon">ðŸžï¸</div>
+        <div class="project-content">
+          <h3>The Lake & Company</h3>
+          <p>Lifestyle brand store</p>
+        </div>
+        <div class="project-arrow">â†’</div>
+      </a>
+    </div>
+  </section>
 
-<footer>
-  © 2026 Ahsan Ali
-</footer>
+  <!-- Shopify App -->
+  <section class="section">
+    <div class="section-header">
+      <h2><span class="section-number">05</span>Shopify App</h2>
+      <p class="section-description">Published applications on Shopify App Store</p>
+    </div>
+    <div class="projects">
+      <a href="https://apps.shopify.com/subscriptionflow-app-1" target="_blank" class="project-card featured">
+        <div class="project-icon">â­</div>
+        <div class="project-content">
+          <h3>SubscriptionFlow</h3>
+          <p>Shopify App Store â€“ Subscription management solution</p>
+        </div>
+        <div class="project-arrow">â†’</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- WordPress -->
+  <section class="section alt">
+    <div class="section-header">
+      <h2><span class="section-number">06</span>WordPress Projects</h2>
+      <p class="section-description">Custom WordPress websites and solutions</p>
+    </div>
+    <div class="projects">
+      <a href="https://www.subscriptionflow.com/" target="_blank" class="project-card">
+        <div class="project-icon">ðŸ”„</div>
+        <div class="project-content">
+          <h3>SubscriptionFlow</h3>
+          <p>Main website platform</p>
+        </div>
+        <div class="project-arrow">â†’</div>
+      </a>
+      <a href="https://crittendenreport.com/" target="_blank" class="project-card">
+        <div class="project-icon">ðŸ“°</div>
+        <div class="project-content">
+          <h3>Crittenden Report</h3>
+          <p>News & media platform</p>
+        </div>
+        <div class="project-arrow">â†’</div>
+      </a>
+      <a href="https://www.thinkculinary.com/" target="_blank" class="project-card">
+        <div class="project-icon">ðŸ½ï¸</div>
+        <div class="project-content">
+          <h3>Think Culinary</h3>
+          <p>Culinary industry website</p>
+        </div>
+        <div class="project-arrow">â†’</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- WordPress Plugins -->
+  <section class="section">
+    <div class="section-header">
+      <h2><span class="section-number">07</span>WordPress Plugins</h2>
+      <p class="section-description">Published plugins on WordPress.org</p>
+    </div>
+    <div class="projects">
+      <a href="https://wordpress.org/plugins/subscriptionflow-integration-for-woocommerce/" target="_blank" class="project-card featured">
+        <div class="project-icon">ðŸ”Œ</div>
+        <div class="project-content">
+          <h3>SubscriptionFlow for WooCommerce</h3>
+          <p>WordPress.org plugin â€“ WooCommerce integration</p>
+        </div>
+        <div class="project-arrow">â†’</div>
+      </a>
+      <a href="https://wordpress.org/plugins/subscriptionflow-add-on-for-paywall/" target="_blank" class="project-card featured">
+        <div class="project-icon">ðŸ”Œ</div>
+        <div class="project-content">
+          <h3>SubscriptionFlow Paywall Add-on</h3>
+          <p>WordPress.org plugin â€“ Paywall integration</p>
+        </div>
+        <div class="project-arrow">â†’</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Wix -->
+  <section class="section alt">
+    <div class="section-header">
+      <h2><span class="section-number">08</span>Wix Projects</h2>
+      <p class="section-description">Custom Wix websites and applications</p>
+    </div>
+    <div class="projects">
+      <a href="https://www.asherhousewellness.com/" target="_blank" class="project-card">
+        <div class="project-icon">ðŸ </div>
+        <div class="project-content">
+          <h3>Asher House Wellness</h3>
+          <p>Wellness & lifestyle platform</p>
+        </div>
+        <div class="project-arrow">â†’</div>
+      </a>
+      <a href="https://www.commercialclubhouse.com/" target="_blank" class="project-card">
+        <div class="project-icon">ðŸ¢</div>
+        <div class="project-content">
+          <h3>Commercial Clubhouse</h3>
+          <p>Business community platform</p>
+        </div>
+        <div class="project-arrow">â†’</div>
+      </a>
+      <a href="https://www.comicsoncoffee.com/" target="_blank" class="project-card">
+        <div class="project-icon">â˜•</div>
+        <div class="project-content">
+          <h3>Comics on Coffee</h3>
+          <p>Entertainment & e-commerce</p>
+        </div>
+        <div class="project-arrow">â†’</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Wix App -->
+  <section class="section">
+    <div class="section-header">
+      <h2><span class="section-number">09</span>Wix App</h2>
+      <p class="section-description">Published applications on Wix App Market</p>
+    </div>
+    <div class="projects">
+      <a href="https://www.wix.com/app-market/subscriptionflow-app" target="_blank" class="project-card featured">
+        <div class="project-icon">â­</div>
+        <div class="project-content">
+          <h3>SubscriptionFlow</h3>
+          <p>Wix App Market â€“ Subscription management solution</p>
+        </div>
+        <div class="project-arrow">â†’</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Working Companies -->
+  <section class="section alt" id="experience">
+    <div class="section-header">
+      <h2><span class="section-number">10</span>Working Companies</h2>
+      <p class="section-description">Professional experience and career journey</p>
+    </div>
+    <div class="companies">
+      <div class="company-card">
+        <div class="company-header">
+          <div class="company-icon">ðŸ¢</div>
+          <div class="company-info">
+            <h3>Techloyce</h3>
+            <p class="company-role">Full-Stack Developer</p>
+          </div>
+        </div>
+        <div class="company-period">
+          <span class="period-badge">2018 - Present</span>
+        </div>
+        <p class="company-description">Currently working on cutting-edge e-commerce solutions, subscription platforms, and custom web applications.</p>
+      </div>
+      <div class="company-card">
+        <div class="company-header">
+          <div class="company-icon">ðŸ’¼</div>
+          <div class="company-info">
+            <h3>AMS (All Marketing Solutions)</h3>
+            <p class="company-role">Web Developer</p>
+          </div>
+        </div>
+        <div class="company-period">
+          <span class="period-badge">2015 - 2018</span>
+        </div>
+        <p class="company-description">Developed and maintained multiple client websites, focusing on WordPress and custom web solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="section-header">
+      <h2><span class="section-number">11</span>Let's Work Together</h2>
+      <p class="section-description">Ready to build something amazing? Let's connect!</p>
+    </div>
+    <div class="contact-content">
+      <p class="contact-text">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+      <div class="contact-buttons">
+        <a href="mailto:ahsanali171m@gmail.com" class="btn btn-primary">Send Email</a>
+        <!-- <a href="https://github.com/ahsanali171" target="_blank" class="btn btn-secondary">View GitHub</a> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>Â© 2026 <strong>Ahsan Ali</strong> â€” Ecommerce & Subscription Solutions</p>
+      <p class="footer-subtitle">Built with passion for creating exceptional digital experiences</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offsetTop = target.offsetTop - 80;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+
+      if (currentScroll > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+
+      lastScroll = currentScroll;
+    });
+
+    // Active link highlighting on scroll
+    const sections = document.querySelectorAll('section[id], header[id]');
+    
+    function highlightActiveSection() {
+      const scrollY = window.pageYOffset;
+
+      sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100;
+        const sectionId = section.getAttribute('id');
+        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          if (navLink) {
+            navLink.classList.add('active');
+          }
+        }
+      });
+    }
+
+    window.addEventListener('scroll', highlightActiveSection);
+    highlightActiveSection(); // Call on page load
+  </script>
 
 </body>
 </html>
