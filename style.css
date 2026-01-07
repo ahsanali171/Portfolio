@@ -23,7 +23,7 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
   background: var(--bg-dark);
   color: var(--text-primary);
   line-height: 1.6;
@@ -297,7 +297,12 @@ body {
   font-weight: 500;
   margin-bottom: 20px;
   border: 1px solid rgba(255, 255, 255, 0.3);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   animation: fadeIn 1.2s ease-out;
+}
+
+.hero-badge i {
+  margin-right: 8px;
 }
 
 .hero-title {
@@ -373,6 +378,10 @@ body {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.8);
   transform: translateY(-3px);
+}
+
+.btn i {
+  margin-right: 8px;
 }
 
 /* Hero Shapes Animation */
@@ -512,6 +521,12 @@ body {
   font-size: 2.5rem;
   margin-bottom: 15px;
   display: block;
+  line-height: 1;
+  color: var(--primary);
+}
+
+.card-icon i {
+  display: inline-block;
 }
 
 .card h3 {
@@ -548,6 +563,12 @@ body {
   border: 1px solid var(--border);
   transition: all 0.3s ease;
   display: inline-block;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.tag i {
+  margin-right: 8px;
+  color: var(--primary);
 }
 
 .tag:hover {
@@ -617,6 +638,12 @@ body {
   background: rgba(99, 102, 241, 0.1);
   border-radius: 12px;
   transition: all 0.3s ease;
+  line-height: 1;
+  color: var(--primary);
+}
+
+.project-icon i {
+  display: inline-block;
 }
 
 .project-card:hover .project-icon {
@@ -710,6 +737,12 @@ body {
   border-radius: 16px;
   flex-shrink: 0;
   transition: all 0.3s ease;
+  line-height: 1;
+  color: var(--primary);
+}
+
+.company-icon i {
+  display: inline-block;
 }
 
 .company-card:hover .company-icon {
