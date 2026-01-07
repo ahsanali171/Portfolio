@@ -471,6 +471,91 @@
 
     window.addEventListener('scroll', highlightActiveSection);
     highlightActiveSection(); // Call on page load
+
+    // Scroll-triggered animations using Intersection Observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          // Stagger animation for cards in grid
+          if (entry.target.classList.contains('card') || entry.target.classList.contains('project-card')) {
+            const cards = Array.from(entry.target.parentElement.children);
+            const index = cards.indexOf(entry.target);
+            entry.target.style.transitionDelay = `${index * 0.1}s`;
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with animation classes
+    document.addEventListener('DOMContentLoaded', () => {
+      // Add animation classes to elements
+      const cards = document.querySelectorAll('.card');
+      const projectCards = document.querySelectorAll('.project-card');
+      const companyCards = document.querySelectorAll('.company-card');
+      const sections = document.querySelectorAll('.section');
+      const tags = document.querySelectorAll('.tag');
+
+      // Add stagger animation to cards
+      cards.forEach((card, index) => {
+        card.classList.add('animate-on-scroll-scale');
+        card.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(card);
+      });
+
+      // Add slide animation to project cards
+      projectCards.forEach((card, index) => {
+        card.classList.add('animate-on-scroll');
+        card.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(card);
+      });
+
+      // Add animation to company cards
+      companyCards.forEach((card, index) => {
+        card.classList.add('animate-on-scroll-left');
+        card.style.transitionDelay = `${index * 0.15}s`;
+        observer.observe(card);
+      });
+
+      // Add animation to tags
+      tags.forEach((tag, index) => {
+        tag.classList.add('animate-on-scroll-scale');
+        tag.style.transitionDelay = `${index * 0.05}s`;
+        observer.observe(tag);
+      });
+
+      // Add animation to section headers
+      sections.forEach((section, index) => {
+        const header = section.querySelector('.section-header');
+        if (header) {
+          header.classList.add('animate-on-scroll');
+          observer.observe(header);
+        }
+      });
+    });
+
+    // Parallax effect for hero section
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const hero = document.querySelector('.hero');
+      if (hero) {
+        const heroContent = hero.querySelector('.hero-content');
+        if (heroContent && scrolled < window.innerHeight) {
+          heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
+          heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+        }
+      }
+    });
+
+    // Add loading animation
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
   </script>
 
 </body>
